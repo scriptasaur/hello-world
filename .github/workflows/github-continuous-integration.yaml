@@ -3,10 +3,14 @@ name: GitHub Continuous Integration
 on:
   workflow_dispatch:
     inputs:
-      USER:
-        description: 'User to greet'
+      POTATO:
+        description: 'Potato user'
         required: true
-        default: 'Scriptasaurus Rex'
+        default: 'Potato'
+      TOMATO:
+        description: 'Tomato user'
+        required: true
+        default: 'Tomato'
 
 jobs:
   build:
@@ -16,5 +20,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Run Makefile
         env:
-          USER: ${{ github.event.inputs.USER }}
+          POTATO: ${{ github.event.inputs.POTATO }}
+          TOMATO: ${{ github.event.inputs.TOMATO }}
         run: make all

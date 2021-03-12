@@ -1,4 +1,5 @@
 all: greet
 
 greet:
-	@echo "Hello $(USER)!"
+	@make --directory potato greet
+	@make --directory tomato greet
